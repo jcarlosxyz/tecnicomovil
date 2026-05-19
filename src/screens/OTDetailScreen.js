@@ -402,7 +402,7 @@ export default function OTDetailScreen({ route, navigation }) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar barStyle="light-content" backgroundColor="#0a0f1d" />
+      <StatusBar barStyle="light-content" backgroundColor="#0c061a" />
       
       {/* Background blobs to simulate futuristic neon blur lights */}
       <View style={[styles.blurBlob, styles.blobPurple]} />
@@ -609,7 +609,7 @@ export default function OTDetailScreen({ route, navigation }) {
 
           {/* Listado de Materiales Registrados */}
           {loadingMateriales ? (
-            <ActivityIndicator style={{ marginVertical: 15 }} color="#00bfff" />
+            <ActivityIndicator style={{ marginVertical: 15 }} color="#d800ff" />
           ) : registrosMateriales.length === 0 ? (
             <View style={styles.emptyMaterials}>
               <Text style={styles.emptyMaterialsText}>No se han cargado refacciones a esta OT.</Text>
@@ -833,7 +833,7 @@ export default function OTDetailScreen({ route, navigation }) {
                 activeOpacity={0.8}
               >
                 {isSubmitting ? (
-                  <ActivityIndicator color="#0a0f1d" />
+                  <ActivityIndicator color="#ffffff" />
                 ) : (
                   <Text style={styles.btnSubmitText}>
                     {selectedEstado === 'Cerrada' ? 'Confirmar Cierre de OT' : 'Guardar Cambios de Progreso'}
@@ -903,7 +903,7 @@ export default function OTDetailScreen({ route, navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0a0f1d', // Ultra deep futuristic navy
+    backgroundColor: '#0c061a', // Ultra deep dark violet
   },
   blurBlob: {
     position: 'absolute',
@@ -913,12 +913,12 @@ const styles = StyleSheet.create({
     opacity: 0.12,
   },
   blobPurple: {
-    backgroundColor: '#8a2be2',
+    backgroundColor: '#d800ff', // Vibrant magenta blob
     top: '-5%',
     right: '-10%',
   },
   blobBlue: {
-    backgroundColor: '#00bfff',
+    backgroundColor: '#7c3aed', // Purple blob
     bottom: '20%',
     left: '-15%',
   },
@@ -1008,7 +1008,7 @@ const styles = StyleSheet.create({
   valueHighlight: {
     fontSize: 22,
     fontWeight: 'bold',
-    color: '#00bfff',
+    color: '#c084fc',
   },
   value: {
     fontSize: 15,
@@ -1073,13 +1073,13 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   checklistHeader: {
-    backgroundColor: 'rgba(0, 191, 255, 0.06)',
+    backgroundColor: 'rgba(216, 0, 255, 0.06)',
     padding: 12,
     borderBottomWidth: 1,
     borderColor: 'rgba(255, 255, 255, 0.06)',
   },
   checklistHeaderText: {
-    color: '#00bfff',
+    color: '#c084fc',
     fontSize: 11,
     fontWeight: 'bold',
     letterSpacing: 0.5,
@@ -1301,8 +1301,8 @@ const styles = StyleSheet.create({
     shadowColor: '#10b981',
   },
   btnSubmitProgreso: {
-    backgroundColor: '#00bfff',
-    shadowColor: '#00bfff',
+    backgroundColor: '#d800ff',
+    shadowColor: '#d800ff',
   },
   btnSubmitText: {
     color: '#0a0f1d',
@@ -1335,23 +1335,23 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   btnAddMaterial: {
-    backgroundColor: 'rgba(0, 191, 255, 0.06)',
+    backgroundColor: 'rgba(216, 0, 255, 0.06)',
     borderWidth: 1.5,
-    borderColor: 'rgba(0, 191, 255, 0.25)',
+    borderColor: 'rgba(216, 0, 255, 0.25)',
     borderRadius: 12,
     paddingVertical: 12,
     alignItems: 'center',
     marginBottom: 15,
   },
   btnAddMaterialText: {
-    color: '#00bfff',
+    color: '#c084fc',
     fontWeight: 'bold',
     fontSize: 14,
   },
   materialForm: {
     backgroundColor: 'rgba(15, 23, 42, 0.5)',
     borderWidth: 1.5,
-    borderColor: '#00bfff',
+    borderColor: '#d800ff',
     borderRadius: 16,
     padding: 16,
     marginBottom: 18,
@@ -1359,7 +1359,7 @@ const styles = StyleSheet.create({
   materialFormTitle: {
     fontSize: 14,
     fontWeight: 'bold',
-    color: '#00bfff',
+    color: '#c084fc',
     marginBottom: 12,
   },
   materialSelectBtn: {
@@ -1394,10 +1394,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   btnSaveMat: {
-    backgroundColor: '#00bfff',
+    backgroundColor: '#d800ff',
   },
   btnSaveMatText: {
-    color: '#0a0f1d',
+    color: '#ffffff',
     fontWeight: 'bold',
   },
   emptyMaterials: {
@@ -1443,13 +1443,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   qtyBadge: {
-    backgroundColor: 'rgba(0, 191, 255, 0.08)',
+    backgroundColor: 'rgba(216, 0, 255, 0.08)',
     paddingHorizontal: 8,
     paddingVertical: 3,
     borderRadius: 6,
   },
   qtyBadgeText: {
-    color: '#00bfff',
+    color: '#c084fc',
     fontSize: 11,
     fontWeight: '700',
   },
@@ -1485,15 +1485,15 @@ const styles = StyleSheet.create({
     zIndex: 10000,
   },
   pickerContent: {
-    backgroundColor: '#0a0f1d',
-    borderColor: 'rgba(0, 191, 255, 0.3)',
+    backgroundColor: '#0c061a',
+    borderColor: 'rgba(216, 0, 255, 0.3)',
     borderWidth: 1.5,
     borderRadius: 24,
     width: '90%',
     maxHeight: '80%',
     padding: 24,
     elevation: 10,
-    shadowColor: '#00bfff',
+    shadowColor: '#d800ff',
     shadowOffset: { width: 0, height: 10 },
     shadowOpacity: 0.25,
     shadowRadius: 15,

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert, ActivityIndicator, Image, Platform, ScrollView } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert, ActivityIndicator, Image, Platform, ScrollView, ImageBackground, KeyboardAvoidingView } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { supabase } from '../lib/supabase';
 
@@ -112,69 +112,55 @@ export default function LoginScreen({ navigation }) {
     </View>
   );
 
-  if (Platform.OS === 'android') {
-    return (
-      <View style={styles.container}>
+  return (
+    <ImageBackground 
+      source={require('../../assets/pantallaf.jpg')} 
+      style={styles.backgroundImage}
+      resizeMode="cover"
+    >
+      <KeyboardAvoidingView 
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'} 
+        style={styles.container}
+      >
         <ScrollView contentContainerStyle={styles.scrollContainer} keyboardShouldPersistTaps="handled">
-          {/* Background blobs to simulate futuristic neon blur lights */}
-          <View style={[styles.blurBlob, styles.blobPurple]} />
-          <View style={[styles.blurBlob, styles.blobBlue]} />
           {renderCardContent()}
         </ScrollView>
-      </View>
-    );
-  }
-
-  return (
-    <KeyboardAvoidingView behavior="padding" style={styles.container}>
-      <ScrollView contentContainerStyle={styles.scrollContainer} keyboardShouldPersistTaps="handled">
-        {/* Background blobs to simulate futuristic neon blur lights */}
-        <View style={[styles.blurBlob, styles.blobPurple]} />
-        <View style={[styles.blurBlob, styles.blobBlue]} />
-        {renderCardContent()}
-      </ScrollView>
-    </KeyboardAvoidingView>
+      </KeyboardAvoidingView>
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
+  backgroundImage: {
+    flex: 1,
+    width: '100%',
+    height: '100%',
+  },
   container: {
     flex: 1,
-    backgroundColor: '#0a0f1d', // Ultra deep futuristic navy
+    backgroundColor: 'rgba(10, 5, 25, 0.45)', // Sleek dark overlay to ensure readability
   },
   scrollContainer: {
     flexGrow: 1,
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
-    paddingTop: 55,
-  },
-  blurBlob: {
-    position: 'absolute',
-    width: 250,
-    height: 250,
-    borderRadius: 125,
-    opacity: 0.15,
-  },
-  blobPurple: {
-    backgroundColor: '#8a2be2',
-    top: '10%',
-    left: '-10%',
-  },
-  blobBlue: {
-    backgroundColor: '#00bfff',
-    bottom: '15%',
-    right: '-10%',
+    paddingVertical: 50,
   },
   loginCard: {
     width: '100%',
-    maxWidth: 400,
-    backgroundColor: 'rgba(255, 255, 255, 0.03)',
+    maxWidth: 380,
+    backgroundColor: 'rgba(12, 10, 24, 0.82)', // Translucent deep violet
     borderRadius: 24,
-    borderWidth: 1,
-    borderColor: 'rgba(255, 255, 255, 0.08)',
+    borderWidth: 1.5,
+    borderColor: 'rgba(216, 0, 255, 0.25)', // Glowing neon purple border
     padding: 30,
     alignItems: 'stretch',
+    shadowColor: '#d800ff',
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.25,
+    shadowRadius: 16,
+    elevation: 8,
   },
   logoContainer: {
     alignItems: 'center',
@@ -187,11 +173,11 @@ const styles = StyleSheet.create({
     padding: 3,
     backgroundColor: 'rgba(255, 255, 255, 0.08)',
     borderWidth: 1.5,
-    borderColor: 'rgba(0, 191, 255, 0.5)',
+    borderColor: 'rgba(216, 0, 255, 0.5)',
     justifyContent: 'center',
     alignItems: 'center',
     overflow: 'hidden',
-    shadowColor: '#00bfff',
+    shadowColor: '#d800ff',
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.3,
     shadowRadius: 8,
@@ -210,7 +196,7 @@ const styles = StyleSheet.create({
   },
   brandSubtitle: {
     fontSize: 13,
-    color: '#00bfff',
+    color: '#d800ff', // Match magenta neon lighting
     textAlign: 'center',
     marginTop: 4,
     marginBottom: 30,
@@ -224,7 +210,7 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 12,
-    color: '#94a3b8',
+    color: '#a78bfa', // Lavender light text
     marginBottom: 8,
     fontWeight: '700',
     textTransform: 'uppercase',
@@ -233,21 +219,21 @@ const styles = StyleSheet.create({
   inputWrapper: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: 'rgba(15, 23, 42, 0.6)',
+    backgroundColor: 'rgba(10, 5, 20, 0.75)',
     borderWidth: 1.5,
-    borderColor: 'rgba(0, 191, 255, 0.25)', // Elegant glowing border statically!
+    borderColor: 'rgba(216, 0, 255, 0.3)',
     borderRadius: 12,
     paddingHorizontal: 15,
     height: 54,
-    shadowColor: '#00bfff',
+    shadowColor: '#d800ff',
     shadowOffset: { width: 0, height: 0 },
-    shadowOpacity: 0.1,
+    shadowOpacity: 0.15,
     shadowRadius: 4,
   },
   inputIcon: {
     fontSize: 16,
     marginRight: 10,
-    color: '#00bfff',
+    color: '#d800ff',
   },
   input: {
     flex: 1,
@@ -258,26 +244,26 @@ const styles = StyleSheet.create({
   },
   button: {
     height: 54,
-    backgroundColor: '#00bfff',
+    backgroundColor: '#d800ff', // Neon purple accent button
     borderRadius: 12,
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 15,
-    shadowColor: '#00bfff',
+    shadowColor: '#d800ff',
     shadowOffset: { width: 0, height: 6 },
     shadowOpacity: 0.4,
     shadowRadius: 10,
     elevation: 5,
   },
   buttonText: {
-    color: '#0a0f1d',
+    color: '#ffffff',
     fontSize: 16,
     fontWeight: 'bold',
     letterSpacing: 0.5,
   },
   footerText: {
     fontSize: 11,
-    color: '#64748b',
+    color: '#7c3aed', // Purple footer text
     textAlign: 'center',
     marginTop: 25,
     letterSpacing: 0.5,

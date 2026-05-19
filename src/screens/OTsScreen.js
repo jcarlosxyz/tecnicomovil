@@ -152,7 +152,7 @@ export default function OTsScreen({ navigation }) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar barStyle="light-content" backgroundColor="#0a0f1d" />
+      <StatusBar barStyle="light-content" backgroundColor="#0c061a" />
       
       {/* Background blobs to simulate futuristic neon blur lights */}
       <View style={[styles.blurBlob, styles.blobPurple]} />
@@ -202,7 +202,7 @@ export default function OTsScreen({ navigation }) {
 
       {loading ? (
         <View style={styles.loaderContainer}>
-          <ActivityIndicator size="large" color="#00bfff" />
+          <ActivityIndicator size="large" color="#d800ff" />
           <Text style={styles.loaderText}>Sincronizando órdenes...</Text>
         </View>
       ) : ots.length === 0 ? (
@@ -229,7 +229,7 @@ export default function OTsScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0a0f1d', // Ultra deep futuristic navy
+    backgroundColor: '#0c061a', // Ultra deep dark violet
   },
   blurBlob: {
     position: 'absolute',
@@ -239,12 +239,12 @@ const styles = StyleSheet.create({
     opacity: 0.12,
   },
   blobPurple: {
-    backgroundColor: '#8a2be2',
+    backgroundColor: '#d800ff', // Vibrant magenta blob
     top: '-5%',
     right: '-10%',
   },
   blobBlue: {
-    backgroundColor: '#00bfff',
+    backgroundColor: '#7c3aed', // Purple blob
     bottom: '20%',
     left: '-15%',
   },
@@ -269,7 +269,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(255, 255, 255, 0.06)',
     borderRadius: 32,
     borderWidth: 1.5,
-    borderColor: '#00bfff',
+    borderColor: '#d800ff',
   },
   profileImage: {
     width: 48,
@@ -351,7 +351,7 @@ const styles = StyleSheet.create({
   },
   statBoxTotal: {
     borderLeftWidth: 3,
-    borderLeftColor: '#00bfff',
+    borderLeftColor: '#d800ff',
   },
   statCount: {
     fontSize: 22,
@@ -417,7 +417,7 @@ const styles = StyleSheet.create({
   otNumber: {
     fontSize: 14,
     fontWeight: 'bold',
-    color: '#00bfff',
+    color: '#c084fc',
   },
   statusPill: {
     paddingHorizontal: 10,
@@ -488,7 +488,7 @@ const styles = StyleSheet.create({
   },
   viewMoreText: {
     fontSize: 13,
-    color: '#00bfff',
+    color: '#c084fc',
     fontWeight: '700',
   },
   loaderContainer: {

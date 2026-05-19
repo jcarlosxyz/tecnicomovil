@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web"
+    "start": "node copy-assets.js && expo start",
+    "android": "node copy-assets.js && expo start --android",
+    "ios": "node copy-assets.js && expo start --ios",
+    "web": "node copy-assets.js && expo start --web"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "2.2.0",
