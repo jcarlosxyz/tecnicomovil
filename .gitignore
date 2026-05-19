@@ -2,6 +2,8 @@
 .env
 .env.local
 .env.*.local
+.env.railway
+*.env
 
 # Dependencies
 node_modules/
